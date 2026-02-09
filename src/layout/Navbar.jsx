@@ -88,10 +88,17 @@ export const Navbar = () => {
               </a>
             ))}
 
- <Button size="sm" href="#contact">
+ <Button
+  size="sm"
+  onClick={() => {
+    document.querySelector("#contact")?.scrollIntoView({
+      behavior: "smooth",
+    });
+    setIsMobileMenuOpen(false);
+  }}
+>
   Contact Me
 </Button>
-
 
 
           </div>
@@ -100,3 +107,5 @@ export const Navbar = () => {
     </header>
   );
 };
+
+export default Navbar;
