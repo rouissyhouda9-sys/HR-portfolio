@@ -89,9 +89,9 @@ export const Contact = () => {
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-10 ">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in animation-delay-200">
           <span className="text-secondary text-sm font-medium tracking-wider uppercase">
             Get In Touch
           </span>
@@ -109,10 +109,10 @@ export const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto animate-fade-in animation-delay-200">
           {/* FORM */}
           <div className="glass-strong p-8 rounded-3xl border border-primary/50">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6 animate-fade-in animation-delay-200">
               {/* Name */}
               <div>
                 <label
@@ -219,7 +219,7 @@ export const Contact = () => {
           </div>
 
           {/* INFO */}
-          <div className="space-y-6">
+          <div className="space-y-6 animate-fade-in animation-delay-200">
             <div className="glass rounded-3xl p-8">
               <h3 className="text-xl font-semibold mb-6">
                 Contact Information
@@ -251,7 +251,7 @@ export const Contact = () => {
             {/* Availability */}
             <div className="glass rounded-3xl p-8 border border-primary/30">
               <div className="flex items-center gap-3 mb-4">
-                <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                <span className="w-3 h-3 bg-green-500 rounded-full animate-fade-in animation-delay-200" />
                 <span className="font-medium">Currently Available</span>
               </div>
               <p className="text-muted-foreground text-sm">
