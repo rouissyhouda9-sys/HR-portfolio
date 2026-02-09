@@ -1,0 +1,252 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+:root {
+  --vh: 100%;
+}
+
+@supports (height: 100dvh) {
+  :root {
+    --vh: 100dvh;
+  }
+}
+ 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: "Inter", sans-serif;
+  }
+
+  .font-serif {
+    font-family: "Playfair Display", serif;
+  }
+}
+@theme {
+
+    /* Backgrounds */
+    --color-background: #0B0B0D;        
+    --color-surface: #FF2E93;          
+    --color-card: #1A1A1F;             
+
+    /* Text */
+    --color-foreground: #F5F5F7;        
+    --color-muted-foreground: #A1A1AA;  
+
+    /* Brand / Accent */
+    --color-primary: #FF2E93;          
+    --color-primary-foreground: #0B0B0D;
+
+    /* Secondary accent (glow / gradients) */
+    --color-secondary: #6D2EFF;          /* soft purple */
+    --color-secondary-foreground: #FFFFFF;
+
+    /* UI */
+    --color-muted: #1F1F25;
+    --color-border: #2A2A2F;
+
+    /* Highlight */
+    --color-highlight: #FF4FA3;        
+
+    /* Shape */
+    --radius: 1rem;
+  }
+
+@layer base {
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: "Inter", sans-serif;
+  }
+
+  .font-serif {
+    font-family: "Playfair Display", serif;
+  }
+}
+@layer components{
+  .glass{
+    background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
+    backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in (srgb), var(--color-border) 50%, transparent);
+  } 
+   .glass-strong{
+    background-color: color-mix(in srgb, var(--color-primary) 15%, transparent);
+    backdrop-filter: blur(3px);
+    border: 1px solid color-mix(in (srgb), var(--color-border) 60%, transparent);
+  }
+  .glow-text{
+    text-shadow: 0 0 30px  color-mix(in (srgb), var(--color-primary) 50%, transparent);
+  }
+  .glow-border {
+    box-shadow: 0 0 20px
+        color-mix(in srgb, var(--color-primary) 20%, transparent),
+      inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
+  }
+}
+@layer utilities {
+  @keyframes fade-in {
+    from{
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(10px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0px);
+      filter: blur(0px);
+    }
+
+  }
+   @keyframes slow-drift {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(20px, -30px);
+    }
+    50% {
+      transform: translate(-15px, -20px);
+    }
+    75% {
+      transform: translate(30px, 10px);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes marquee {
+    0%  {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+.animate-fade-in{
+  animation: fade-in 0.8s ease-out both;
+}
+ .animate-marquee {
+    animation: marquee 35s linear infinite; 
+  }
+   
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+.animation-delay-100{
+  animation-delay: 100ms;
+}
+.animation-delay-200{
+  animation-delay: 200ms;
+}
+.animation-delay-300{
+  animation-delay: 300ms;
+}
+.animation-delay-400{
+  animation-delay: 400ms;
+}
+.animation-delay-500{
+  animation-delay: 500ms;
+}
+.animation-delay-600{
+  animation-delay: 600ms;
+}
+.animation-delay-800{
+  animation-delay: 800ms;
+}
+@keyframes animated-border{
+  0%{ stroke-dashoffset:400;}
+  100%{ stroke-dashoffset:-550;}
+}
+  
+
+.group:hover .animated-border-path{
+  animation:  animated-border 1.5s linear infinite;
+
+
+}
+.animated-border:hover {
+    background-color: color-mix(in srgb, #26c4b8 15%, transparent);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 0 20px color-mix(in srgb, #26c4b8 20%, transparent);
+  }
+}
+
+.logo-hover {
+  position: relative;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.logo-hover span {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.logo-short {
+  display: inline-block;
+}
+
+.logo-dot {
+  color: var(--color-primary);
+}
+
+.logo-full {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transform: translateY(6px);
+  white-space: nowrap;
+  color: var(--color-primary);
+}
+
+.logo-hover:hover .logo-short {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+.logo-hover:hover .logo-full {
+  opacity: 1;
+  transform: translateY(0);
+  text-shadow: 0 0 30px
+    color-mix(in srgb, var(--color-primary) 50%, transparent);
+}
+.animate-fade-in,
+.animate-float,
+.animate-marquee {
+  animation-play-state: paused;
+}.in-view.animate-fade-in {
+  animation-play-state: running;
+}
+
+.in-view.animate-float {
+  animation-play-state: running;
+}
+
+.in-view.animate-marquee {
+  animation-play-state: running;
+}
+

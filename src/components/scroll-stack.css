@@ -1,0 +1,86 @@
+.scroll-stack-scroller {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow :  visible;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: scroll-position;
+}
+
+.scroll-stack-inner {
+   
+padding-top: 10px;
+  padding-left: 0rem;
+  padding-right: 0rem;
+  /* padding-bottom: 0vh; 
+ min-height: 100vh; */
+  
+}
+
+.scroll-stack-card-wrapper {
+  position: relative;
+}
+
+.scroll-stack-card {
+  transform-origin: top center;
+  will-change: transform, filter;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 30px rgba(245, 93, 177, 0.836);
+ height: auto;
+min-height: 20rem;
+  width: 100%;
+  margin: 30px 0;
+  padding: 4rem 2rem;
+  border-radius: 40px;
+  box-sizing: border-box;
+  /* Improve mobile performance */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  position: relative;
+   background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+  color: rgb(255, 255, 255);
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+ 
+.scroll-stack-end {
+  height: 1px;
+  margin-top: 80vh;  
+}
+.scroll-card-content {
+  max-height: 18rem;       
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+ @media (max-width: 768px) {
+  .scroll-stack-scroller {
+    height: auto;
+    min-height: 100svh;
+  }
+
+  .scroll-stack-inner {
+    mask-image: none;
+    -webkit-mask-image: none;
+    padding-bottom: 60vh;
+  }
+
+  .scroll-stack-card {
+    height: auto;
+    min-height: 0vh;
+    padding: 3rem 1.5rem;
+  }
+
+  .scroll-card-content {
+    max-height: none;
+  }
+}
