@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { Navbar } from "@/layout/navbar";
+ 
+import Navbar from "@/layout/Navbar";
 import Hero from "@/sections/Hero";
 import { About } from "@/sections/About";
 import { Experience } from "@/sections/Experience";
