@@ -24,26 +24,10 @@ const highlights = [
       "Clear communication with designers, teams, and clients to deliver quality results.",
   },
 ];
-const skills = [
-  "Webflow",
-  "React",
-  "WordPress",
-  "HTML5",
-  "CSS3",
-  "JavaScript",
-  "Tailwind CSS",
-  "Next.js",
-  "Figma",
-  "MongoDB",
-  "Git",
-  "Jira",
-  "MantisBT",
-  "Squash TM",
-  "TestLink",
-];
+
 export const About = () => {
   return (
-    <section id="about" className="py-32 relative overflow-hidden">
+    <section id="about" className="py-25 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column */}
@@ -80,10 +64,8 @@ and strict adherence to quality standards. I’m comfortable collaborating withi
             </div>
 
             <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-500">
-              <p className="text-lg font-medium italic text-foreground">
-                "My mission is to create digital experiences that are not just
-                functional, but truly delightful — products that users love to
-                use and developers love to maintain."
+              <p className="text-xl font-medium italic text-foreground ">
+                "I build digital spaces that people love to use and developers actually want to maintain."
               </p>
             </div>
           </div>
@@ -108,30 +90,7 @@ and strict adherence to quality standards. I’m comfortable collaborating withi
           </div>
         </div>
       </div>
-        {/*skills */}
-       <div className="mt-35 animate-fade-in animation-delay-800">
-          <p className="text-lg text-secondary mb-5 text-center">
-            Technologies I work with
-          </p>
-        <div className="relative overflow-hidden group cursor-pointer">
-  <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r 
-  from-background to-transparent z-10" />
-  <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l 
-  from-background to-transparent z-10" />
-
-  <div className="flex animate-marquee group-hover:[animation-play-state:paused]">
-    {[...skills, ...skills].map((skill, idx) => (
-      <div key={idx} className="flex-shrink-0 px-8">
-        <span className="text-2xl font-semibold text-muted-foreground/50
-         hover:text-muted-foreground transition-colors">
-          {skill}
-        </span>
-      </div>
-    ))}
-  </div>
-</div>
-
-        </div>
+     
     </section>
   );
 };

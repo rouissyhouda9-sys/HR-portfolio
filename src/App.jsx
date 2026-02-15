@@ -2,6 +2,7 @@ import { useEffect } from "react";
  
 import Navbar from "@/layout/Navbar";
 import Hero from "@/sections/Hero";
+import Technologies from "@/sections/Technologies"
 import { About } from "@/sections/About";
 import { Experience } from "@/sections/Experience";
  
@@ -41,6 +42,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Technologies/>
         <Experience />
         
         <Projects />

@@ -26,19 +26,22 @@ export default function Hero() {
       {/* Background animation */}
       <div className="absolute inset-0 -z-10">
         <LiquidEther
-          className="h-full w-full"
-          colors={["#5227FF", "#FF9FFC", "#B19EEF"]}
-          mouseForce={10}
-          cursorSize={120}
-          isViscous
-          viscous={30}
-          resolution={0.4}
-          autoDemo
-        />
+     
+      mouseForce={15}
+    cursorSize={100}
+    isViscous={false}
+    viscous={55}
+    colors={["#c77fa9","#c18f9c","#c9a6c0"]}
+    autoDemo
+    autoSpeed={0.5}
+    autoIntensity={2.2}
+    isBounce={false}
+    resolution={0.5}
+  />
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-20 pt-50 pb-20 relative z-10">
+      <div className="container mx-auto px-20 pt-50 pb-24 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           
           {/* LEFT COLUMN */}
@@ -132,7 +135,7 @@ export default function Hero() {
         </div>
       
       </div>
-       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 animate-fade-in animation-delay-800">
+       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-30 animate-fade-in animation-delay-800">
   <a
     href="#about"
     className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
