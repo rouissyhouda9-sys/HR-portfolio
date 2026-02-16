@@ -47,20 +47,20 @@ export const About = () => {
             </h2>
 
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-500">
-              <p>
-           I’m a front-end web developer with a Bachelor’s degree in Web Application Design and Development, specialized in creating performant,
- maintainable, and user-friendly web solutions. I focus on transforming UI/UX designs into responsive, accessible interfaces aligned with
-  real functional needs.
+      <p>    I’m a front-end web developer with a Bachelor’s degree in Web Application Design and Development,
+        specialized in building performant, maintainable, and human-friendly web solutions. 
+        My specialty is analyzing UI/UX designs and building responsive and accessible interfaces that match the actual functional needs. 
+
+
+
               </p>
               <p>
-               I bring a strong sensitivity to software quality and functional testing, applying structured testing practices to ensure reliability, stability,
- and consistency across user journeys. For me, a good interface is not only visually clean — it must work flawlessly.
+               I have developed a high level of sensitivity and awareness of software quality and functional testing, 
+employing structured testing practices to guarantee the reliability, stability, and consistency of user journeys. 
+A good interface has to be visually clean, but also has to ‘click’. 
+
               </p>
-              <p>
-             I have experience working on high-traffic digital platforms, contributing to their reliability through bug fixing, continuous improvement, 
-and strict adherence to quality standards. I’m comfortable collaborating within teams or working independently with clients, always prioritizing
- clarity, performance, and long-term maintainability.
-              </p>
+              
             </div>
 
             <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-500">

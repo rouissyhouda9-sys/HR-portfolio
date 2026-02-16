@@ -25,19 +25,31 @@ export default function Hero() {
     <section className="relative min-h-[100dvh] overflow-hidden">
       {/* Background animation */}
       <div className="absolute inset-0 -z-10">
-        <LiquidEther
-     
-      mouseForce={15}
-    cursorSize={100}
-    isViscous={false}
-    viscous={55}
-    colors={["#c77fa9","#c18f9c","#c9a6c0"]}
+       <LiquidEther     mouseForce={20}
+    cursorSize={50}
+    isViscous
+    viscous={30}
+    colors={["#95939f","#FF9FFC","#fbbced"]}
     autoDemo
     autoSpeed={0.5}
     autoIntensity={2.2}
     isBounce={false}
     resolution={0.5}
   />
+  {/* <ColorBends
+     colors={["#ff5c7a", "#8a5cff", "#00ffd1"]}
+  rotation={0}
+  speed={0.2}
+  scale={1}
+  frequency={1}
+  warpStrength={1}
+  mouseInfluence={1}
+  parallax={0.5}
+  noise={0.1}
+  transparent
+  autoRotate={0}
+  color=""
+/>*/}
       </div>
 
       {/* Content */}
@@ -63,10 +75,10 @@ export default function Hero() {
               </h1>
 
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-500">
-                Hi, I’m Houda Rouissy, a Web Developer focused on building and
-                managing modern websites with strong attention to performance,
-                usability, and clean UI. I create scalable, performant web
-                experiences users enjoy.
+               
+               Hi, I'm Houda Rouissy, a web developer who builds and manages modern websites. <br/>
+                Paying attention to performance, usability, and clean UI is absolutely my thing...<br/>
+                Creating scalable and efficient web experiences that users enjoy is my specialty
               </p>
 
               {/* CTAs */}
@@ -117,7 +129,7 @@ export default function Hero() {
                 <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                    <span className="text-sm font-medium">
+                    <span className="text-sm glow text-primary-foreground font-medium">
                       Available for work
                     </span>
                   </div>
@@ -125,7 +137,7 @@ export default function Hero() {
                      {/* Stats Badge */}
                          <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
                   <div className="text-2xl font-bold text-primary-foreground">6+</div>
-                  <div className="text-xs text-foreground">Years Exp.</div>    
+                  <div className="text-xs text-primary-foreground">Years Exp.</div>    
                   </div>
               </div>
 
