@@ -98,12 +98,12 @@
                       {exp.role}
                     </h3>
 
-                    <p className="text-muted-foreground">
+                    <p className="text-foreground">
                       {exp.company}
                     </p>
 
                     {/* Bullets */}
-                    <ul className="mt-4 space-y-2 text-sm text-muted-foreground list-disc pl-5">
+                    <ul className="mt-4 space-y-2 text-sm text-foreground list-disc pl-5">
                       {exp.bullets.map((item, i) => (
                         <li key={i}>{item}</li>
                       ))}

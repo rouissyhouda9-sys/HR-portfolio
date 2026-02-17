@@ -58,7 +58,7 @@ export default function Hero() {
           
           {/* LEFT COLUMN */}
           <div className="space-y-8">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-muted-foreground animate-fade-in">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-foreground animate-fade-in">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
               Web Developer – Webmaster
             </span>
@@ -74,9 +74,9 @@ export default function Hero() {
                 </span>
               </h1>
 
-              <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-500">
+              <p className="text-lg text-foreground max-w-lg animate-fade-in animation-delay-500">
                
-               Hi, I'm Houda Rouissy, a web developer who builds and manages modern websites. <br/>
+               Hi, I'm Houda Rouissy, a web developer who builds and manages modern websites.
                 Paying attention to performance, usability, and clean UI is absolutely my thing...<br/>
                 Creating scalable and efficient web experiences that users enjoy is my specialty
               </p>

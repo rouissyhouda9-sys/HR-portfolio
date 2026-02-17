@@ -46,7 +46,7 @@ export const About = () => {
               </span>
             </h2>
 
-            <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-500">
+            <div className="space-y-4 text-foreground animate-fade-in animation-delay-500">
       <p>    I’m a front-end web developer with a Bachelor’s degree in Web Application Design and Development,
         specialized in building performant, maintainable, and human-friendly web solutions. 
         My specialty is analyzing UI/UX designs and building responsive and accessible interfaces that match the actual functional needs. 

@@ -254,7 +254,7 @@ export const Contact = () => {
                 <span className="w-3 h-3 bg-green-500 rounded-full animate-fade-in animation-delay-200" />
                 <span className="font-medium">Currently Available</span>
               </div>
-              <p className="text-muted-foreground text-sm">
+              <p className="text-foreground text-sm">
                 I’m currently open to new opportunities and meaningful projects.
                 I enjoy collaborating with teams that value quality,
                 performance, and thoughtful design. Let’s build something
