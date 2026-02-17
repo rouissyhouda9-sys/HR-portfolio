@@ -1,21 +1,23 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
 :root {
   --vh: 100%;
 }
 
 @supports (height: 100dvh) {
-  :root { --vh: 100dvh; }
+  :root {
+    --vh: 100dvh;
+  }
 }
-
-/* ===============================
-   BASE
-   =============================== */
-
+ 
 @layer base {
-  html { scroll-behavior: smooth; }
-  button { cursor: pointer; }
+  html {
+    scroll-behavior: smooth;
+  }
+
+  button {
+    cursor: pointer;
+  }
 
   body {
     background-color: var(--color-background);
@@ -27,144 +29,170 @@
     font-family: "Playfair Display", serif;
   }
 }
-
-/* ===============================
-   THEME COLORS (NEONIX)
-   =============================== */
-
 @theme {
 
-/* BACKGROUND */
---color-background: linear-gradient(
-  140deg,
-  #0b0010 0%,
-  #7A001F 45%,
-  #FF2E6F 100%
-);
+    /* Backgrounds */
+    --color-background: #0B0B0D;        
+    --color-surface: #91124f;          
+    --color-card: #1A1A1F;             
 
---color-surface: #2a0015;
---color-card: #14000b;
+    /* Text */
+    --color-foreground: #F5F5F7;        
+    --color-muted-foreground: #A1A1AA;  
 
-/* TEXT */
---color-foreground: #FFE6EF;
---color-muted-foreground: #FF9FC4;
+    /* Brand / Accent */
+    --color-primary: #bf0b62;          
+    --color-primary-foreground: #0B0B0D;
 
-/* ACCENTS */
---color-primary: #f5729b;
---color-primary-foreground: #000000;
+    /* Secondary accent (glow / gradients) */
+    --color-secondary: #6D2EFF;          /* soft purple */
+    --color-secondary-foreground: #FFFFFF;
 
---color-secondary: #FF6FA3;
---color-secondary-foreground: #000000;
+    /* UI */
+    --color-muted: #1F1F25;
+    --color-border: #2A2A2F;
 
-/* UI */
---color-muted: #1a000f;
---color-border: #FF2E6F33;
+    /* Highlight */
+    --color-highlight: #FF4FA3;        
 
-/* HIGHLIGHT */
---color-highlight: #FF6FA3;
-
---radius: 1rem;
-}
-
-/* ===============================
-   BACKGROUND
-   =============================== */
+    /* Shape */
+    --radius: 1rem;
+  }
 
 @layer base {
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    margin: 0;
-    min-height: 100vh;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: "Inter", sans-serif;
+  }
 
-    background: #000;;
-
-    background-attachment: fixed;
+  .font-serif {
+    font-family: "Playfair Display", serif;
   }
 }
-
-/* ===============================
-   COMPONENTS
-   =============================== */
-
-@layer components {
-
-/* Glass neon style */
-.glass{
-  background: rgba(255,46,111,0.08);
+@layer components{
+  .glass{
+    background-color: rgba(255, 46, 147, 0.35);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,46,111,0.25);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  } 
+   .glass-strong{
+  background-color: rgba(255, 46, 147, 0.18); /* fallback */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .glow-text{
+    text-shadow: 0 0 30px  color-mix(in (srgb), var(--color-primary) 50%, transparent);
+  }
+  .glow-border {
+    box-shadow: 0 0 20px
+        color-mix(in srgb, var(--color-primary) 20%, transparent),
+      inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
+  }
 }
-
-.glass-strong{
-  background: rgba(255,46,111,0.18);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,46,111,0.35);
-}
-
-.glow-text{
-  text-shadow: 0 0 25px
-    color-mix(in srgb, var(--color-primary) 60%, transparent);
-}
-
-.glow-border {
-  box-shadow:
-    0 0 20px color-mix(in srgb, var(--color-primary) 30%, transparent),
-    inset 0 0 12px color-mix(in srgb, var(--color-primary) 10%, transparent);
-}
-}
-
-/* ===============================
-   UTILITIES & ANIMATIONS
-   =============================== */
-
 @layer utilities {
+  @keyframes fade-in {
+    from{
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(10px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0px);
+      filter: blur(0px);
+    }
 
-@keyframes fade-in {
-  from { opacity:0; transform:translateY(20px); filter:blur(8px); }
-  to { opacity:1; transform:translateY(0); filter:blur(0); }
+  }
+   @keyframes slow-drift {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(20px, -30px);
+    }
+    50% {
+      transform: translate(-15px, -20px);
+    }
+    75% {
+      transform: translate(30px, 10px);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes marquee {
+    0%  {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+.animate-fade-in{
+  animation: fade-in 0.8s ease-out both;
 }
-
-@keyframes float {
-  0%,100% { transform:translateY(0); }
-  50% { transform:translateY(-10px); }
+ .animate-marquee {
+    animation: marquee 10s linear infinite; 
+  }
+   
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+.animation-delay-100{
+  animation-delay: 100ms;
 }
-
-@keyframes marquee {
-  0% { transform:translateX(0); }
-  100% { transform:translateX(-50%); }
+.animation-delay-200{
+  animation-delay: 200ms;
 }
-
-.animate-fade-in{ animation: fade-in 0.8s ease-out both; }
-.animate-float { animation: float 4s ease-in-out infinite; }
-.animate-marquee { animation: marquee 10s linear infinite; }
-
-.animation-delay-100{ animation-delay:100ms; }
-.animation-delay-200{ animation-delay:200ms; }
-.animation-delay-300{ animation-delay:300ms; }
-.animation-delay-400{ animation-delay:400ms; }
-.animation-delay-500{ animation-delay:500ms; }
-.animation-delay-600{ animation-delay:600ms; }
-.animation-delay-800{ animation-delay:800ms; }
-
+.animation-delay-300{
+  animation-delay: 300ms;
+}
+.animation-delay-400{
+  animation-delay: 400ms;
+}
+.animation-delay-500{
+  animation-delay: 500ms;
+}
+.animation-delay-600{
+  animation-delay: 600ms;
+}
+.animation-delay-800{
+  animation-delay: 800ms;
+}
 @keyframes animated-border{
   0%{ stroke-dashoffset:400;}
   100%{ stroke-dashoffset:-550;}
 }
+  
 
 .group:hover .animated-border-path{
-  animation: animated-border 1.5s linear infinite;
-}
+  animation:  animated-border 1.5s linear infinite;
 
+
+}
 .animated-border:hover {
-  background-color: color-mix(in srgb, var(--color-primary) 15%, transparent);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent);
+    background-color: color-mix(in srgb, #26c4b8 15%, transparent);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 0 20px color-mix(in srgb, #26c4b8 20%, transparent);
+  }
 }
-}
-
-/* ===============================
-   LOGO HOVER
-   =============================== */
 
 .logo-hover {
   position: relative;
@@ -175,10 +203,17 @@
   cursor: pointer;
 }
 
-.logo-hover span { transition: 0.35s ease; }
+.logo-hover span {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
 
-.logo-short { display: inline-block; }
-.logo-dot { color: var(--color-primary); }
+.logo-short {
+  display: inline-block;
+}
+
+.logo-dot {
+  color: var(--color-primary);
+}
 
 .logo-full {
   position: absolute;
@@ -198,18 +233,21 @@
 .logo-hover:hover .logo-full {
   opacity: 1;
   transform: translateY(0);
-  text-shadow: 0 0 25px
+  text-shadow: 0 0 30px
     color-mix(in srgb, var(--color-primary) 50%, transparent);
 }
-
-/* pause animations until visible */
-
 .animate-fade-in,
 .animate-float,
 .animate-marquee {
   animation-play-state: paused;
+}.in-view.animate-fade-in {
+  animation-play-state: running;
 }
 
-.in-view.animate-fade-in { animation-play-state: running; }
-.in-view.animate-float { animation-play-state: running; }
-.in-view.animate-marquee { animation-play-state: running; }
+.in-view.animate-float {
+  animation-play-state: running;
+}
+
+.in-view.animate-marquee {
+  animation-play-state: running;
+}
